@@ -14,7 +14,7 @@ first();
 function user() {
     var command = process.argv[2];
 
-    console.log("Was not able to quit finish this feature and run project again")
+    console.log("Was not able to quite finish this feature and run project again")
     if (command === 'q1 front') {
 
         console.log(QuestionsOne.front)
