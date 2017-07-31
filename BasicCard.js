@@ -11,22 +11,20 @@ var QuestionsOne = data.QuestionsOne;
 first();
 
 
-function user(){
-var command = process.argv[2];
+function user() {
+    var command = process.argv[2];
 
-console.log("Was not able to quit finish this feature and run project again")
-if(command === 'q1 front') {
+    console.log("Was not able to quit finish this feature and run project again")
+    if (command === 'q1 front') {
 
-console.log(QuestionsOne.front)
+        console.log(QuestionsOne.front)
 
-}
-
-else{
+    } else {
 
 
-process.exit();
-    
-}
+        process.exit();
+
+    }
 
 
 }
@@ -44,15 +42,15 @@ process.exit();
 
 
 
-    
-//}
-
 
 //}
 
-function first(){
 
-inquirer
+//}
+
+function first() {
+
+    inquirer
         .prompt([{
             name: 'action',
             type: 'list',
@@ -64,11 +62,10 @@ inquirer
             } else if (answer.action === 'everything') {
 
                 choice();
-            } else if(answer.action === 'FNB'){
+            } else if (answer.action === 'FNB') {
 
 
-            }
-            else {
+            } else {
                 process.exit();
             }
         });
@@ -82,27 +79,29 @@ function choice() {
             name: 'action',
             type: 'list',
             message: 'What would you like to do?',
-            choices: ['Study', 'Flash', 'Stop Studying']
+            choices: ['Study', 'Flash', 'FNB', 'Stop Studying']
         }]).then(function(answer) {
             if (answer.action === 'Study') {
                 studyCards();
             } else if (answer.action === 'Flash') {
 
                 realCards();
-            } else if(answer.action === 'FNB'){
+            } else if (answer.action === 'FNB') {
 
-
-            }
-            else {
+                user();
+            } else {
+                console.log("========>>>>>>Run Node BasicCard.js to start the program again<<<<<<<<<====")
                 process.exit();
             }
         });
 }
 
 
-function FNB() {
-    // body...
-}
+//function FNB() {
+
+//  user();
+// body...
+//}
 
 ////////////////////////////////////////////
 
@@ -174,7 +173,3 @@ function studyCards() {
             });
         });
 }
-
-
-
-
